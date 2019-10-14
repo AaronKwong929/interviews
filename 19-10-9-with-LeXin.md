@@ -46,9 +46,9 @@ export default abc;
 
 xx.$on('1234', callback)
 
-## （追问）eventBus在什么情况下适用 
+## （追问）eventBus在什么情况下适用
 
-## 低频，少组件通信下使用
+### 低频，少组件通信下使用
 
 其实就是emit on
 
