@@ -72,7 +72,7 @@ application/msword  ： Word文档格式
 
 application/octet-stream ： 二进制流数据（如常见的文件下载）
 
-application/x-www-form-urlencoded ： <form encType=""> 中默认的encType，form表单数据被编码为key/value格式发送到服务器（表单默认的提交数据的格式）
+application/x-www-form-urlencoded ： \<form encType=""\> 中默认的encType，form表单数据被编码为key/value格式发送到服务器（表单默认的提交数据的格式）
 
 另外一种常见的媒体格式是上传文件之时使用的：
 
@@ -111,10 +111,8 @@ function f(n) {
     return n < 2 ? 1 : f(n - 1) + f(n - 2);
 }
 
-console.log(f(6));
+console.log(f(6)); // 13
 ```
-
-13
 
 ### 即斐波那契数列去第一项
 
@@ -146,7 +144,7 @@ console.log(fib2(6));
 
 /**
  * 记忆函数
- * @param {*} fn 
+ * @param {*} fn
  */
 function memozi(fn) {
     var r = {}
@@ -159,9 +157,6 @@ function memozi(fn) {
         }
     }
 }
-/**
- * 
- */
 
 let fibfn = memozi(function (n) {
     if (n == 0) {
@@ -176,7 +171,6 @@ let fibfn = memozi(function (n) {
 console.log(fibfn(6));
 
 ```
-
 
 ## 数组去重
 
