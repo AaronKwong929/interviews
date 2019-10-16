@@ -118,24 +118,65 @@ console.log(f(6));
 
 ### 即斐波那契数列去第一项
 
-改写
-
 ``` JS
-function fib2(n) {
-    let i = 1, j = 2, res;  // 去掉第一项
-    if (n < 2) {
-        return 1;
-    }
-    for (let k = 2; k < n; k++) {
-        res = i + j;
-        i = j;
-        j = res;
-    }
-    return res;
+// 斐波那契的写法
+// 原版的斐波那契数列（递归  -- 性能问题 fib(5) 要算 fib(4) + fib(3)---fib(4)要算 fib(3) + fib(2)，重复计算
+const fib = n => {
+    return n < 2 ? (n < 1 ? 0 : 1) : fib(n - 1) + fib(n - 2);
 }
+console.log(fib(6));
 
+// 原版斐波那契数列（非递归  -- 参数较多  a b 分别代表数列的第一/第二项
+const fib2 = n => {
+    if (n < 1) {
+        return 0;
+    } else if (n < 2) {
+        return 1;
+    } else {
+        let res, a = 0, b = 1;
+        for (let i = 2; i <= n; i++) {
+            res = a + b;
+            a = b;
+            b = res;
+        }
+        return res;
+    }
+}
 console.log(fib2(6));
+
+/**
+ * 记忆函数
+ * @param {*} fn 
+ */
+function memozi(fn) {
+    var r = {}
+    return function (n) {
+        if (!r[n]) {
+            r[n] = fn(n);
+            return r[n];
+        } else {
+            return r[n];
+        }
+    }
+}
+/**
+ * 
+ */
+
+let fibfn = memozi(function (n) {
+    if (n == 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fibfn(n - 1) + fibfn(n - 2);
+    }
+})
+
+console.log(fibfn(6));
+
 ```
+
 
 ## 数组去重
 
